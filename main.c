@@ -2,12 +2,12 @@
  * City as Index
  * Road as Edge/Vertex
  */
-#include <format>
+//#include <format> like std::string message = same thing else
 #include <iostream>
 #include <vector>
 #include <string>
-#include <queue>
-#include <unordered_map>
+//#include <queue> i made hard coded mode
+#include <unordered_map> //to std::unordered_map<std::string, int>, hash things to map a ::vector<::String> with index numbers
 
 void static tab();
 
@@ -56,12 +56,14 @@ struct Graph_t {
 
     //matri[][] adj && list[][]
     //std::vector<std::vector<std::string, int>> adjacencies = {};
+
     std::vector<std::vector<Edge_t> > adjList; //[][] Edge_t because we need the struct to calculate that thing.
     std::vector<std::vector<float> > adjMatrix; //[][] float because of km
 };
 
 void mkGraph(Graph_t &graph, Cities_t &cities) {
     //using unordered_map (hash map to search the city by the index number)
+    
     int index = 0;
     for (auto &cityName: cities.citiesNames) {
         //"save" the name of cityName on the loop.
